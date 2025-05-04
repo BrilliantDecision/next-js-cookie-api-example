@@ -97,7 +97,15 @@ export default function Home() {
         <p>Cookie sameSite:</p>
         <input
           type="text"
-          onChange={(e) => setOpts({ ...opts, sameSite: e.target.value })}
+          onChange={(e) =>
+            setOpts({
+              ...opts,
+              sameSite:
+                e.target.value === "true"
+                  ? Boolean(e.target.value)
+                  : e.target.value,
+            })
+          }
         />
         <p>Cookie numberOfDays:</p>
         <input
